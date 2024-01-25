@@ -27,6 +27,7 @@ function App() {
     }
   };
 
+  console.log(temperatureDetails);
   //decide what to do
   let content = null;
 

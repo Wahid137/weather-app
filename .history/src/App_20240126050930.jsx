@@ -27,6 +27,7 @@ function App() {
     }
   };
 
+  console.log(temperatureDetails);
   //decide what to do
   let content = null;
 
@@ -35,6 +36,7 @@ function App() {
   }
 
   if (!isLoading && isError) {
+    console.log("error");
     content = <p className="error">There was an error occured</p>;
   }
 
