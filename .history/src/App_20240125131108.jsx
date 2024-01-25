@@ -1,0 +1,23 @@
+import { useEffect, useState } from "react";
+import InputForm from "./components/InputForm";
+import WeatherInfo from "./components/WeatherInfo";
+
+function App() {
+  const [temperatureDetails, setTemperatureDetails] = useState([]);
+  const [cityName, setCityName] = useState("dhaka");
+  const API_KEY = `fbcfa34964a764bbc4cf1f81102e469f`;
+
+  const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`;
+
+  useEffect(() => {
+    fetch();
+  }, []);
+  return (
+    <div className="container">
+      <InputForm />
+      <WeatherInfo />
+    </div>
+  );
+}
+
+export default App;

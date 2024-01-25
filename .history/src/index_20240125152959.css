@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background: url(../src/assets/images/weather-4.jpg) no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
