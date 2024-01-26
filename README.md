@@ -1,8 +1,19 @@
-# React + Vite
+# Weather-application-wahid137
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Hello welcome to [weather-app](https://65b35bd3d92c788eacdc27f0--weather-app-react-query.netlify.app/).
 
-Currently, two official plugins are available:
+## Live Server
+https://65b35bd3d92c788eacdc27f0--weather-app-react-query.netlify.app/
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+
+## About Project
+- I've used reactjs and tailwind css to develop the UI of this site.
+- For fetching api used react query
+- This website is mainly based on showing data of different city.
+- I have used debounce in search functionality.
+  
+### Special Features
+- On this website shows the daily forecast of a city.
+- Users can search any city for showing weather condition.
+- Users also see the location of input city.
+
