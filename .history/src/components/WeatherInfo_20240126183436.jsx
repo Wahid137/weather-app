@@ -6,17 +6,20 @@ import {
   UilWind,
 } from "@iconscout/react-unicons";
 import { useQuery } from "@tanstack/react-query";
+import "leaflet/dist/leaflet.css";
+import { MapContainer, TileLayer } from "react-leaflet";
 import TimeFormate from "../utils/TimeFormate";
 import HourlyForecast from "./HourlyForecast";
-import Location from "./Location";
 
 const WeatherInfo = ({ temperature, refetch }) => {
-  const API_KEY = import.meta.env.VITE_API_KEY;
+  const API_KEY_DAILY = import.meta.env.VITE_API_KEY_DAILY;
   refetch();
   const lon = temperature.coord.lon;
   const lat = temperature.coord.lat;
 
-  const url = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=current,minutely,hourly,alerts&appid=${API_KEY}&units=metric`;
+  const position = [lat, lon];
+
+  const url = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=current,minutely,hourly,alerts&appid=${API_KEY_DAILY}&units=metric`;
 
   const { data: dailyForecasts = [] } = useQuery({
     queryKey: ["temperatureDetails", lon],
@@ -33,7 +36,21 @@ const WeatherInfo = ({ temperature, refetch }) => {
             </p>
           </div>
           <div className="w-1/2 lg:w-1/4 mx-auto">
-            <Location lat={lat} lon={lon} />
+            <MapContainer
+              center={position}
+              zoom={13}
+              w
+              style={{ height: "200px", width: "100%" }}
+            >
+              <TileLayer
+                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+              />
+
+              {/* <Marker position={position}></Marker> */}
+            </MapContainer>
+
+            {/*  <Location lat={lat} lon={lon} /> */}
           </div>
         </div>
       </div>
@@ -104,7 +121,6 @@ const WeatherInfo = ({ temperature, refetch }) => {
       </div>
 
       <HourlyForecast title="daily forecast" dailyForecasts={dailyForecasts} />
-      <HourlyForecast title="hourly forecast" dailyForecasts={dailyForecasts} />
     </div>
   );
 };

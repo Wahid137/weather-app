@@ -26,7 +26,7 @@ function App() {
 
   const searchWeather = (searchText) => {
     if (searchText == "") {
-      window.location.reload();
+      //window.location.reload();
       return setInputCity("dhaka");
     } else {
       setInputCity(searchText);
@@ -48,7 +48,11 @@ function App() {
 
   if (!isLoading && !isError && temperatureDetails.base) {
     content = (
-      <WeatherInfo temperature={temperatureDetails} refetch={refetch} />
+      <WeatherInfo
+        temperature={temperatureDetails}
+        refetch={refetch}
+        data={data}
+      />
     );
   }
 

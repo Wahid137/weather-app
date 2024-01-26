@@ -13,7 +13,7 @@ const HourlyForecast = ({ title }) => {
             src={`https://openweathermap.org/img/wn/10d@2x.png`}
             alt="weather-icon"
           />
-          <p className="font-medium">28 °C</p>
+          <p className="font-medium">22 °C</p>
         </div>
         <div className="flex flex-col items-center justify-between text-white">
           <p>6:30 </p>
@@ -22,7 +22,7 @@ const HourlyForecast = ({ title }) => {
             src={`https://openweathermap.org/img/wn/04d@2x.png`}
             alt="weather-icon"
           />
-          <p className="font-medium">12 °C</p>
+          <p className="font-medium">22 °C</p>
         </div>
         <div className="flex flex-col items-center justify-between text-white">
           <p>6:30 </p>
@@ -31,7 +31,7 @@ const HourlyForecast = ({ title }) => {
             src={`https://openweathermap.org/img/wn/10d@2x.png`}
             alt="weather-icon"
           />
-          <p className="font-medium">18 °C</p>
+          <p className="font-medium">22 °C</p>
         </div>
         <div className="flex flex-col items-center justify-between text-white">
           <p>6:30 </p>
@@ -40,7 +40,7 @@ const HourlyForecast = ({ title }) => {
             src={`https://openweathermap.org/img/wn/04d@2x.png`}
             alt="weather-icon"
           />
-          <p className="font-medium">23 °C</p>
+          <p className="font-medium">22 °C</p>
         </div>
         <div className="flex flex-col items-center justify-between text-white">
           <p>6:30 </p>
@@ -49,7 +49,7 @@ const HourlyForecast = ({ title }) => {
             src={`https://openweathermap.org/img/wn/04d@2x.png`}
             alt="weather-icon"
           />
-          <p className="font-medium">17 °C</p>
+          <p className="font-medium">22 °C</p>
         </div>
         <div className="flex flex-col items-center justify-between text-white">
           <p>6:30 </p>
@@ -58,7 +58,7 @@ const HourlyForecast = ({ title }) => {
             src={`https://openweathermap.org/img/wn/10d@2x.png`}
             alt="weather-icon"
           />
-          <p className="font-medium">25 °C</p>
+          <p className="font-medium">22 °C</p>
         </div>
         <div className="flex flex-col items-center justify-between text-white">
           <p>6:30 </p>
@@ -67,7 +67,7 @@ const HourlyForecast = ({ title }) => {
             src={`https://openweathermap.org/img/wn/04d@2x.png`}
             alt="weather-icon"
           />
-          <p className="font-medium">17 °C</p>
+          <p className="font-medium">22 °C</p>
         </div>
         <div className="flex flex-col items-center justify-between text-white">
           <p>6:30 </p>

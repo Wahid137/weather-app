@@ -26,7 +26,7 @@ function App() {
 
   const searchWeather = (searchText) => {
     if (searchText == "") {
-      window.location.reload();
+      //window.location.reload();
       return setInputCity("dhaka");
     } else {
       setInputCity(searchText);
