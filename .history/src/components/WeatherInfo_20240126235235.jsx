@@ -12,12 +12,13 @@ import HourlyForecast from "./HourlyForecast";
 import Location from "./Location";
 
 const WeatherInfo = ({ temperature, refetch }) => {
+  const API_KEY_D = import.meta.env.VITE_API_KEY_D;
+  console.log(API_KEY);
   refetch();
   const lon = temperature.coord.lon;
   const lat = temperature.coord.lat;
 
-  const url = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=2df3719df5d3b238921fa832a774a19d`;
-  console.log(url);
+  const url = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${API_KEY_D}&units=metric`;
 
   // const url = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=current,minutely,hourly,alerts&appid=${API_KEY}&units=metric`;
 
