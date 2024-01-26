@@ -44,6 +44,7 @@ function App() {
   if (!isLoading && !isError && temperatureDetails.base) {
     content = (
       <WeatherInfo temperature={temperatureDetails} refetch={refetch} />
+      setInputCity('')
     );
   }
 
@@ -70,7 +71,7 @@ function App() {
     searchWeather(value);
   };
 
-  const handleSearch = debounceHandler(doSearch, 500);
+  const handleSearch = debounceHandler(doSearch, 800);
 
   return (
     <div className="container pb-7">

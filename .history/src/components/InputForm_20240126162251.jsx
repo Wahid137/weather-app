@@ -1,20 +1,21 @@
 import { MdLocationOn } from "react-icons/md";
 
-const InputForm = ({ handleSearch, inputCity }) => {
+const InputForm = ({ handleSearch }) => {
   return (
-    <div className="flex text-center justify-center">
+    <form className="flex text-center justify-center">
       <div className="flex justify-center my-10">
         <div className="relative overflow-hidden rounded-lg border-2 border-[#1C4336] text-[#1C4336] md:min-w-[380px] lg:min-w-[440px]">
-          <input
-            type="search"
-            name="input"
-            className="z-20 w-full bg-white px-4 py-2.5 pr-10 text-[#1C4336] placeholder:text-[#1C4336] focus:outline-none"
-            placeholder="Enter a city for Weather ..."
-            value={inputCity}
-            required
-            onChange={(e) => handleSearch(e.target.value)}
-          />
-          {/*  <div className="absolute right-0 top-0 flex h-full items-center">
+          <form onSubmit={handleSearch}>
+            <input
+              type="search"
+              name="input"
+              className="z-20 w-full bg-white px-4 py-2.5 pr-10 text-[#1C4336] placeholder:text-[#1C4336] focus:outline-none"
+              placeholder="Enter a city for Weather ..."
+              required
+              /* onChange={(e) => handleSearch(e.target.value)} */
+            />
+          </form>
+          <div className="absolute right-0 top-0 flex h-full items-center">
             <button
               type="submit"
               className="mr-1.5 flex items-center space-x-1.5 rounded-md rounded-e-lg bg-[#1C4336] px-4 py-2.5 text-sm text-white"
@@ -36,7 +37,7 @@ const InputForm = ({ handleSearch, inputCity }) => {
               </svg>
               <span>Search</span>
             </button>
-          </div> */}
+          </div>
         </div>
         <div className="flex flex-row w-1/4 items-center justify">
           <p name="metric" className=" mx-3">
@@ -52,7 +53,7 @@ const InputForm = ({ handleSearch, inputCity }) => {
           </p>
         </div>
       </div>
-    </div>
+    </form>
   );
 };
 

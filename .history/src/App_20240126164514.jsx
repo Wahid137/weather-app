@@ -70,11 +70,11 @@ function App() {
     searchWeather(value);
   };
 
-  const handleSearch = debounceHandler(doSearch, 500);
+  const handleSearch = debounceHandler(doSearch, 800);
 
   return (
     <div className="container pb-7">
-      <InputForm handleSearch={handleSearch} />
+      <InputForm handleSearch={handleSearch} inputCity={inputCity} />
       {content}
     </div>
   );

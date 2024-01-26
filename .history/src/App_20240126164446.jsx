@@ -5,7 +5,7 @@ import WeatherInfo from "./components/WeatherInfo";
 import Loader from "./utils/Loader";
 
 function App() {
-  const [inputCity, setInputCity] = useState("dhaka");
+  const [inputCity, setInputCity] = useState("");
   const API_KEY = import.meta.env.VITE_API_KEY;
 
   const url = `https://api.openweathermap.org/data/2.5/weather?q=${inputCity}&appid=${API_KEY}&units=metric`;
@@ -22,7 +22,7 @@ function App() {
 
   const searchWeather = (searchText) => {
     if (searchText === "") {
-      return setInputCity("dhaka");
+      //return setInputCity("dhaka");
     } else {
       setInputCity(searchText);
     }
@@ -70,11 +70,11 @@ function App() {
     searchWeather(value);
   };
 
-  const handleSearch = debounceHandler(doSearch, 500);
+  const handleSearch = debounceHandler(doSearch, 800);
 
   return (
     <div className="container pb-7">
-      <InputForm handleSearch={handleSearch} />
+      <InputForm handleSearch={handleSearch} inputCity={inputCity} />
       {content}
     </div>
   );

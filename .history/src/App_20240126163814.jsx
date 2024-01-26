@@ -68,9 +68,10 @@ function App() {
 
   const doSearch = (value) => {
     searchWeather(value);
+    setInputCity("");
   };
 
-  const handleSearch = debounceHandler(doSearch, 500);
+  const handleSearch = debounceHandler(doSearch, 800);
 
   return (
     <div className="container pb-7">

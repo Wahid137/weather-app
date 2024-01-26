@@ -70,7 +70,10 @@ function App() {
     searchWeather(value);
   };
 
-  const handleSearch = debounceHandler(doSearch, 500);
+  const handleSearch = (e) => {
+    console.log("hello");
+    debounceHandler(doSearch, 800);
+  };
 
   return (
     <div className="container pb-7">

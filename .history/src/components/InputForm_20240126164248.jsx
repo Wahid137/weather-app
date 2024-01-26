@@ -2,7 +2,7 @@ import { MdLocationOn } from "react-icons/md";
 
 const InputForm = ({ handleSearch, inputCity }) => {
   return (
-    <div className="flex text-center justify-center">
+    <form className="flex text-center justify-center">
       <div className="flex justify-center my-10">
         <div className="relative overflow-hidden rounded-lg border-2 border-[#1C4336] text-[#1C4336] md:min-w-[380px] lg:min-w-[440px]">
           <input
@@ -52,7 +52,7 @@ const InputForm = ({ handleSearch, inputCity }) => {
           </p>
         </div>
       </div>
-    </div>
+    </form>
   );
 };
 
