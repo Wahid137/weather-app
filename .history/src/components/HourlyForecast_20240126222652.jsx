@@ -46,7 +46,7 @@ const HourlyForecast = ({ title }) => {
           <p>6:30 </p>
           <img
             className="w-12 my-1"
-            src={`https://openweathermap.org/img/wn/01d@2x.png`}
+            src={`https://openweathermap.org/img/wn/04d@2x.png`}
             alt="weather-icon"
           />
           <p className="font-medium">17 °C</p>
