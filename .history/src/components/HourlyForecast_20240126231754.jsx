@@ -1,6 +1,7 @@
 import moment from "moment";
 
 const HourlyForecast = ({ title, dailyForecasts }) => {
+  console.log(dailyForecasts.list[1]?.dt);
   return (
     <div className="w-3/5 mt-10 mx-auto">
       <div className="flex items-center justify-start mt-6">
@@ -14,7 +15,7 @@ const HourlyForecast = ({ title, dailyForecasts }) => {
               key={i}
               className="flex flex-col items-center justify-between text-white"
             >
-              <p>{moment.unix(item?.dt).format("HH:mm")}</p>
+              <p>{moment.unix(item?.dt).format("HH,mm")}</p>
               <img
                 className="w-12 my-1"
                 src={`https://openweathermap.org/img/wn/${item?.weather[0]?.icon}@2x.png`}

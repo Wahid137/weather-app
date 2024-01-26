@@ -7,7 +7,6 @@ import {
 } from "@iconscout/react-unicons";
 import { useQuery } from "@tanstack/react-query";
 import TimeFormate from "../utils/TimeFormate";
-import DailyForecast from "./DailyForecast";
 import HourlyForecast from "./HourlyForecast";
 import Location from "./Location";
 
@@ -17,7 +16,7 @@ const WeatherInfo = ({ temperature, refetch }) => {
   const lon = temperature.coord.lon;
   const lat = temperature.coord.lat;
 
-  const url = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`;
+  const url = `https://api.openweathermap.org/data/2.5/forecast?lat=44.34&lon=10.99&appid=${API_KEY}&units=metric`;
 
   // const url = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=current,minutely,hourly,alerts&appid=${API_KEY}&units=metric`;
 
@@ -106,8 +105,8 @@ const WeatherInfo = ({ temperature, refetch }) => {
         </p>
       </div>
 
-      <HourlyForecast title="Hourly forecast" dailyForecasts={dailyForecasts} />
-      <DailyForecast title="Daily forecast" dailyForecasts={dailyForecasts} />
+      <HourlyForecast title="daily forecast" dailyForecasts={dailyForecasts} />
+      <HourlyForecast title="hourly forecast" dailyForecasts={dailyForecasts} />
     </div>
   );
 };

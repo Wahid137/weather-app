@@ -1,6 +1,7 @@
 import moment from "moment";
 
 const HourlyForecast = ({ title, dailyForecasts }) => {
+  console.log(dailyForecasts.list[1]?.dt);
   return (
     <div className="w-3/5 mt-10 mx-auto">
       <div className="flex items-center justify-start mt-6">

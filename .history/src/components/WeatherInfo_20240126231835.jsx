@@ -7,7 +7,6 @@ import {
 } from "@iconscout/react-unicons";
 import { useQuery } from "@tanstack/react-query";
 import TimeFormate from "../utils/TimeFormate";
-import DailyForecast from "./DailyForecast";
 import HourlyForecast from "./HourlyForecast";
 import Location from "./Location";
 
@@ -107,7 +106,7 @@ const WeatherInfo = ({ temperature, refetch }) => {
       </div>
 
       <HourlyForecast title="Hourly forecast" dailyForecasts={dailyForecasts} />
-      <DailyForecast title="Daily forecast" dailyForecasts={dailyForecasts} />
+      {/* <HourlyForecast title="hourly forecast" dailyForecasts={dailyForecasts} /> */}
     </div>
   );
 };

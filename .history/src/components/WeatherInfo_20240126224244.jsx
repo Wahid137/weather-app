@@ -7,7 +7,6 @@ import {
 } from "@iconscout/react-unicons";
 import { useQuery } from "@tanstack/react-query";
 import TimeFormate from "../utils/TimeFormate";
-import DailyForecast from "./DailyForecast";
 import HourlyForecast from "./HourlyForecast";
 import Location from "./Location";
 
@@ -25,6 +24,8 @@ const WeatherInfo = ({ temperature, refetch }) => {
     queryKey: ["temperatureDetails", lon],
     queryFn: () => fetch(url).then((res) => res.json()),
   });
+
+  console.log(dailyForecasts?.list.slice(0, 8));
 
   return (
     <div className=" text-white text-center mt-3">
@@ -106,8 +107,8 @@ const WeatherInfo = ({ temperature, refetch }) => {
         </p>
       </div>
 
-      <HourlyForecast title="Hourly forecast" dailyForecasts={dailyForecasts} />
-      <DailyForecast title="Daily forecast" dailyForecasts={dailyForecasts} />
+      <HourlyForecast title="daily forecast" dailyForecasts={dailyForecasts} />
+      <HourlyForecast title="hourly forecast" dailyForecasts={dailyForecasts} />
     </div>
   );
 };

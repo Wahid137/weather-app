@@ -1,6 +1,6 @@
 import moment from "moment";
 
-const HourlyForecast = ({ title, dailyForecasts }) => {
+const DailyForecast = ({ title, dailyForecasts }) => {
   return (
     <div className="w-3/5 mt-10 mx-auto">
       <div className="flex items-center justify-start mt-6">
@@ -28,4 +28,4 @@ const HourlyForecast = ({ title, dailyForecasts }) => {
   );
 };
 
-export default HourlyForecast;
+export default DailyForecast;
