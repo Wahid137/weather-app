@@ -1,5 +1,5 @@
-import "leaflet/dist/leaflet.css";
 import { MapContainer, Marker, TileLayer } from "react-leaflet";
+import "../leaflet/dist/leaflet.css";
 
 const Location = ({ lat, lon }) => {
   const position = [lat, lon]; // Initial map center coordinates
@@ -14,9 +14,8 @@ const Location = ({ lat, lon }) => {
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
       />
-      <Marker position={position}>
-        {/* Additional Marker content goes here */}
-      </Marker>
+
+      <Marker position={position}></Marker>
     </MapContainer>
   );
 };
