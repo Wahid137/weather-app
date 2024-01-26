@@ -70,7 +70,7 @@ function App() {
   const handleSearch = debounceHandler(doSearch, 800);
 
   return (
-    <div className="container pb-7">
+    <div className="container mb-5">
       <InputForm handleSearch={handleSearch} />
       {content}
     </div>

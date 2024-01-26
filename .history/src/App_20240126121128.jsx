@@ -72,6 +72,7 @@ function App() {
   return (
     <div className="container pb-7">
       <InputForm handleSearch={handleSearch} />
+
       {content}
     </div>
   );

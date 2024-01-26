@@ -1,6 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { useState } from "react";
 import InputForm from "./components/InputForm";
+import Location from "./components/Location";
 import WeatherInfo from "./components/WeatherInfo";
 
 function App() {
@@ -72,6 +73,7 @@ function App() {
   return (
     <div className="container pb-7">
       <InputForm handleSearch={handleSearch} />
+      <Location />
       {content}
     </div>
   );

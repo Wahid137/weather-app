@@ -25,19 +25,15 @@ const WeatherInfo = ({ temperature, refetch }) => {
 
   return (
     <div className=" text-white text-center ">
+      <Location />
       <div>
-        <div className="flex flex-col items-center my-3">
-          <div className="mb-5">
-            <p className="text-white text-xl font-medium">
-              {temperature?.name}, {temperature?.sys?.country}
-            </p>
-          </div>
-          <div className="w-1/4 mx-auto">
-            <Location lat={lat} lon={lon} />
-          </div>
+        <div className="flex flex-center justify-center my-3">
+          <p className="text-white text-xl font-medium">
+            {temperature?.name}, {temperature?.sys?.country}
+          </p>
         </div>
       </div>
-      <div className="flex flex-col md:flex-row items-center py-4 lg: justify-around w-1/2 mx-auto my-7 bg-slate-600 bg-opacity-30 rounded">
+      <div className="flex flex-col md:flex-row items-center py-4 lg: justify-around w-1/2 mx-auto my-7 bg-slate-600 bg-opacity-65 rounded">
         <img
           className="w-20"
           src={`https://openweathermap.org/img/wn/${temperature?.weather[0]?.icon}@2x.png`}
@@ -68,7 +64,6 @@ const WeatherInfo = ({ temperature, refetch }) => {
           </div>
         </div>
       </div>
-
       <div className="flex flex-col lg:flex-row items-center justify-center space-x-2 text-white text-sm py-3">
         <UilSun className="text-orange-300 " />
         <p className="font-light">

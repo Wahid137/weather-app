@@ -2,7 +2,7 @@ import moment from "moment";
 
 const HourlyForecast = ({ title, dailyForecasts }) => {
   return (
-    <div className="w-3/5 mt-10 mx-auto">
+    <div className="w-3/5 mt-10 mx-auto mb-5">
       <div className="flex items-center justify-start mt-6">
         <p className="flex text-black lg:text-white font-medium uppercase">
           {title}

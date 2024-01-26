@@ -37,7 +37,7 @@ const WeatherInfo = ({ temperature, refetch }) => {
           </div>
         </div>
       </div>
-      <div className="flex flex-col md:flex-row items-center py-4 lg: justify-around w-1/2 mx-auto my-7 bg-slate-600 bg-opacity-30 rounded">
+      <div className="flex flex-col md:flex-row items-center py-4 lg: justify-around w-1/2 mx-auto my-7 bg-slate-600 bg-opacity-40 rounded">
         <img
           className="w-20"
           src={`https://openweathermap.org/img/wn/${temperature?.weather[0]?.icon}@2x.png`}

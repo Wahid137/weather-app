@@ -8,7 +8,6 @@ import {
 import { useQuery } from "@tanstack/react-query";
 import TimeFormate from "../utils/TimeFormate";
 import HourlyForecast from "./HourlyForecast";
-import Location from "./Location";
 
 const WeatherInfo = ({ temperature, refetch }) => {
   const API_KEY_DAILY = import.meta.env.VITE_API_KEY_DAILY;
@@ -26,18 +25,18 @@ const WeatherInfo = ({ temperature, refetch }) => {
   return (
     <div className=" text-white text-center ">
       <div>
-        <div className="flex flex-col items-center my-3">
-          <div className="mb-5">
+        <div className="flex justify-center items-center my-3">
+          <div className="w-1/3">
+            <Location />
+          </div>
+          <div className="flex justify-end">
             <p className="text-white text-xl font-medium">
               {temperature?.name}, {temperature?.sys?.country}
             </p>
           </div>
-          <div className="w-1/4 mx-auto">
-            <Location lat={lat} lon={lon} />
-          </div>
         </div>
       </div>
-      <div className="flex flex-col md:flex-row items-center py-4 lg: justify-around w-1/2 mx-auto my-7 bg-slate-600 bg-opacity-30 rounded">
+      <div className="flex flex-col md:flex-row items-center py-4 lg: justify-around w-1/2 mx-auto my-7 bg-slate-600 bg-opacity-65 rounded">
         <img
           className="w-20"
           src={`https://openweathermap.org/img/wn/${temperature?.weather[0]?.icon}@2x.png`}
