@@ -5,14 +5,13 @@ import WeatherInfo from "./components/WeatherInfo";
 import Loader from "./utils/Loader";
 
 function App() {
-  const [inputCity, setInputCity] = useState("dhaka");
-  const [data, setData] = useState("");
+  const [inputCity, setInputCity] = useState("");
   const API_KEY = import.meta.env.VITE_API_KEY;
-  /* if (inputCity == "") {
-    window.location.reload();
-  } */
+  console.log(inputCity);
 
-  const url = `https://api.openweathermap.org/data/2.5/weather?q=${inputCity}&appid=${API_KEY}&units=metric`;
+  const url = `https://api.openweathermap.org/data/2.5/weather?q=${
+    inputCity ? inputCity : "dhaka"
+  }&appid=${API_KEY}&units=metric`;
 
   const {
     data: temperatureDetails = [],
@@ -25,10 +24,9 @@ function App() {
   });
 
   const searchWeather = (searchText) => {
-    if (searchText == "") {
-      setData("dhaka");
-      window.location.reload();
-      return setInputCity("dhaka");
+    if (searchText === " ") {
+      console.log("dd");
+      //return setInputCity("dhaka");
     } else {
       setInputCity(searchText);
     }
@@ -49,11 +47,7 @@ function App() {
 
   if (!isLoading && !isError && temperatureDetails.base) {
     content = (
-      <WeatherInfo
-        temperature={temperatureDetails}
-        refetch={refetch}
-        data={data}
-      />
+      <WeatherInfo temperature={temperatureDetails} refetch={refetch} />
     );
   }
 

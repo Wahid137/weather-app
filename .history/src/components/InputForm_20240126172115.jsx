@@ -1,6 +1,6 @@
 import { MdLocationOn } from "react-icons/md";
 
-const InputForm = ({ handleSearch }) => {
+const InputForm = ({ handleSearch, inputCity }) => {
   return (
     <div className="flex text-center justify-center">
       <div className="flex justify-center my-10">

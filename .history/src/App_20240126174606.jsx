@@ -6,11 +6,7 @@ import Loader from "./utils/Loader";
 
 function App() {
   const [inputCity, setInputCity] = useState("dhaka");
-  const [data, setData] = useState("");
   const API_KEY = import.meta.env.VITE_API_KEY;
-  /* if (inputCity == "") {
-    window.location.reload();
-  } */
 
   const url = `https://api.openweathermap.org/data/2.5/weather?q=${inputCity}&appid=${API_KEY}&units=metric`;
 
@@ -25,9 +21,8 @@ function App() {
   });
 
   const searchWeather = (searchText) => {
-    if (searchText == "") {
-      setData("dhaka");
-      window.location.reload();
+    if (searchText === " ") {
+      console.log("dd");
       return setInputCity("dhaka");
     } else {
       setInputCity(searchText);
@@ -49,11 +44,7 @@ function App() {
 
   if (!isLoading && !isError && temperatureDetails.base) {
     content = (
-      <WeatherInfo
-        temperature={temperatureDetails}
-        refetch={refetch}
-        data={data}
-      />
+      <WeatherInfo temperature={temperatureDetails} refetch={refetch} />
     );
   }
 

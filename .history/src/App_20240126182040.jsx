@@ -49,11 +49,7 @@ function App() {
 
   if (!isLoading && !isError && temperatureDetails.base) {
     content = (
-      <WeatherInfo
-        temperature={temperatureDetails}
-        refetch={refetch}
-        data={data}
-      />
+      <WeatherInfo temperature={temperatureDetails} refetch={refetch} />
     );
   }
 

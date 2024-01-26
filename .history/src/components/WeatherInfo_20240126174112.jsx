@@ -11,6 +11,7 @@ import HourlyForecast from "./HourlyForecast";
 import Location from "./Location";
 
 const WeatherInfo = ({ temperature, refetch }) => {
+  console.log(temperature);
   const API_KEY_DAILY = import.meta.env.VITE_API_KEY_DAILY;
   refetch();
   const lon = temperature.coord.lon;
@@ -19,7 +20,7 @@ const WeatherInfo = ({ temperature, refetch }) => {
   const url = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=current,minutely,hourly,alerts&appid=${API_KEY_DAILY}&units=metric`;
 
   const { data: dailyForecasts = [] } = useQuery({
-    queryKey: ["temperatureDetails", lon],
+    queryKey: ["temperatureDetails", lon, refetch],
     queryFn: () => fetch(url).then((res) => res.json()),
   });
 
@@ -32,8 +33,8 @@ const WeatherInfo = ({ temperature, refetch }) => {
               {temperature?.name}, {temperature?.sys?.country}
             </p>
           </div>
-          <div className="w-1/2 lg:w-1/4 mx-auto">
-            <Location lat={lat} lon={lon} />
+          <div className="w-1/4 mx-auto mb-3">
+            <Location lat={lat} lon={lon} refetch={refetch} />
           </div>
         </div>
       </div>

@@ -1,7 +1,7 @@
 import "leaflet/dist/leaflet.css";
 import { MapContainer, TileLayer } from "react-leaflet";
 
-const Location = ({ lat, lon }) => {
+const Location = ({ lat, lon, refetch }) => {
   const position = [lat, lon]; // Initial map center coordinates
 
   return (

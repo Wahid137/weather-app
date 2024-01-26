@@ -32,8 +32,8 @@ const WeatherInfo = ({ temperature, refetch }) => {
               {temperature?.name}, {temperature?.sys?.country}
             </p>
           </div>
-          <div className="w-1/2 lg:w-1/4 mx-auto">
-            <Location lat={lat} lon={lon} />
+          <div className="w-1/4 mx-auto mb-3">
+            <Location lat={lat} lon={lon} refetch={refetch} />
           </div>
         </div>
       </div>

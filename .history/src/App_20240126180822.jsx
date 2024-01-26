@@ -7,6 +7,7 @@ import Loader from "./utils/Loader";
 function App() {
   const [inputCity, setInputCity] = useState("dhaka");
   const [data, setData] = useState("");
+  console.log(data);
   const API_KEY = import.meta.env.VITE_API_KEY;
   /* if (inputCity == "") {
     window.location.reload();
@@ -26,7 +27,6 @@ function App() {
 
   const searchWeather = (searchText) => {
     if (searchText == "") {
-      setData("dhaka");
       window.location.reload();
       return setInputCity("dhaka");
     } else {
@@ -49,11 +49,7 @@ function App() {
 
   if (!isLoading && !isError && temperatureDetails.base) {
     content = (
-      <WeatherInfo
-        temperature={temperatureDetails}
-        refetch={refetch}
-        data={data}
-      />
+      <WeatherInfo temperature={temperatureDetails} refetch={refetch} />
     );
   }
 

@@ -10,7 +10,7 @@ import TimeFormate from "../utils/TimeFormate";
 import HourlyForecast from "./HourlyForecast";
 import Location from "./Location";
 
-const WeatherInfo = ({ temperature, refetch }) => {
+const WeatherInfo = ({ temperature, refetch,data }) => {
   const API_KEY_DAILY = import.meta.env.VITE_API_KEY_DAILY;
   refetch();
   const lon = temperature.coord.lon;
@@ -32,8 +32,11 @@ const WeatherInfo = ({ temperature, refetch }) => {
               {temperature?.name}, {temperature?.sys?.country}
             </p>
           </div>
-          <div className="w-1/2 lg:w-1/4 mx-auto">
-            <Location lat={lat} lon={lon} />
+          <div className="w-1/4 mx-auto mb-3">
+            {
+              data == 'dhaka' ? <Location lat={23.7104 } lon={lon} />
+            }
+            
           </div>
         </div>
       </div>

@@ -11,6 +11,7 @@ import HourlyForecast from "./HourlyForecast";
 import Location from "./Location";
 
 const WeatherInfo = ({ temperature, refetch }) => {
+  console.log(temperature);
   const API_KEY_DAILY = import.meta.env.VITE_API_KEY_DAILY;
   refetch();
   const lon = temperature.coord.lon;
@@ -32,7 +33,7 @@ const WeatherInfo = ({ temperature, refetch }) => {
               {temperature?.name}, {temperature?.sys?.country}
             </p>
           </div>
-          <div className="w-1/2 lg:w-1/4 mx-auto">
+          <div className="w-1/4 mx-auto mb-3">
             <Location lat={lat} lon={lon} />
           </div>
         </div>

@@ -12,7 +12,9 @@ function App() {
     window.location.reload();
   } */
 
-  const url = `https://api.openweathermap.org/data/2.5/weather?q=${inputCity}&appid=${API_KEY}&units=metric`;
+  const url = `https://api.openweathermap.org/data/2.5/weather?q=${
+    data == "dhaka" ? "dhaka" : inputCity
+  }&appid=${API_KEY}&units=metric`;
 
   const {
     data: temperatureDetails = [],
@@ -27,7 +29,7 @@ function App() {
   const searchWeather = (searchText) => {
     if (searchText == "") {
       setData("dhaka");
-      window.location.reload();
+      //window.location.reload();
       return setInputCity("dhaka");
     } else {
       setInputCity(searchText);
