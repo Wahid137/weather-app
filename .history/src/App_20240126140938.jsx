@@ -44,6 +44,7 @@ function App() {
   if (!isLoading && !isError && temperatureDetails.base) {
     content = (
       <WeatherInfo temperature={temperatureDetails} refetch={refetch} />
+      setInputCity()
     );
   }
 

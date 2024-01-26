@@ -36,9 +36,7 @@ function App() {
   }
 
   if (!isLoading && isError) {
-    content = (
-      <p className="text-red-500 text-center">There was an error occured</p>
-    );
+    content = <p className="error">There was an error occured</p>;
   }
 
   if (!isLoading && !isError && temperatureDetails.base) {
@@ -68,6 +66,7 @@ function App() {
 
   const doSearch = (value) => {
     searchWeather(value);
+    event.target.reset();
   };
 
   const handleSearch = debounceHandler(doSearch, 800);

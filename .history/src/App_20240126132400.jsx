@@ -2,7 +2,6 @@ import { useQuery } from "@tanstack/react-query";
 import { useState } from "react";
 import InputForm from "./components/InputForm";
 import WeatherInfo from "./components/WeatherInfo";
-import Loader from "./utils/Loader";
 
 function App() {
   const [inputCity, setInputCity] = useState("dhaka");
@@ -32,13 +31,15 @@ function App() {
   let content = null;
 
   if (isLoading) {
-    content = <Loader />;
+    content = (
+      <p className="text-white text-lg text-center">
+        <span className="loading loading-spinner loading-lg"></span>
+      </p>
+    );
   }
 
   if (!isLoading && isError) {
-    content = (
-      <p className="text-red-500 text-center">There was an error occured</p>
-    );
+    content = <p className="error">There was an error occured</p>;
   }
 
   if (!isLoading && !isError && temperatureDetails.base) {

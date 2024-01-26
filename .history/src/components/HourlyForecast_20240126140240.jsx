@@ -12,7 +12,7 @@ const HourlyForecast = ({ title, dailyForecasts }) => {
           dailyForecasts?.daily?.map((item) => (
             <div
               key={item?.dt}
-              className="flex flex-col items-center justify-between text-white"
+              className="flex flex-col items-center justify-betweentext-white"
             >
               <p>{moment.unix(item?.dt).format("dddd")}</p>
               <img

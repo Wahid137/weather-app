@@ -38,9 +38,9 @@ const InputForm = ({ handleSearch }) => {
           </div>
         </div>
         <div className="flex flex-row w-1/4 items-center justify">
-          <p name="metric" className=" mx-3">
+          <button name="metric" className=" mx-3">
             <MdLocationOn className="text-white text-xl h-6 w-12" />
-          </p>
+          </button>
 
           <p name="metric" className="text-xl text-white font-semibold">
             °C
