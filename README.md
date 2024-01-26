@@ -2,11 +2,6 @@
 
 ## Hello welcome to [weather-app](https://65b35bd3d92c788eacdc27f0--weather-app-react-query.netlify.app/).
 
-## Table of Content
-- [Live Server](#live-server)
-- [How to run](#how-to-run)
-- [About Project](#about-project)
-
 ## Live Server
 https://65b35bd3d92c788eacdc27f0--weather-app-react-query.netlify.app/
 
