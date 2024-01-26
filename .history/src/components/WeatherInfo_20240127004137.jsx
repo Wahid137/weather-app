@@ -106,13 +106,8 @@ const WeatherInfo = ({ temperature, refetch }) => {
         </p>
       </div>
 
-      <div className="bg-slate-600 bg-opacity-20">
-        <HourlyForecast
-          title="Hourly forecast"
-          dailyForecasts={dailyForecasts}
-        />
-        <DailyForecast title="Daily forecast" dailyForecasts={dailyForecasts} />
-      </div>
+      <HourlyForecast title="Hourly forecast" dailyForecasts={dailyForecasts} />
+      <DailyForecast title="Daily forecast" dailyForecasts={dailyForecasts} />
     </div>
   );
 };
