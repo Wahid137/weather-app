@@ -6,6 +6,7 @@ import Loader from "./utils/Loader";
 
 function App() {
   const [inputCity, setInputCity] = useState("dhaka");
+
   const API_KEY = import.meta.env.VITE_API_KEY;
 
   const url = `https://api.openweathermap.org/data/2.5/weather?q=${inputCity}&appid=${API_KEY}&units=metric`;
